@@ -23,6 +23,7 @@ const theme = createTheme({
 const RegisterComp = () => {
 
     const Schema = yup.object().shape({
+      name : yup.string().email().required("Please fill up this filed"),
         email : yup.string().email().required("Please fill up this filed"),
         password : yup.string().required("Please fill up this filed"),
         confirm:yup.string().oneOf([yup.ref("password"),null])
@@ -43,9 +44,10 @@ const RegisterComp = () => {
                 <Text>Register Your Accout</Text>
                
                 <Form theme={theme}>
-                    <FormGroup2>
-                        <FormControlLabel control={<Checkbox  />} label="Are you a tutor" />
-                    </FormGroup2>
+
+                <Label>{errors.name?.message}</Label>
+                <Input placeholder='Enter your Name' {...register("name")}/>
+                  
                     <Label>{errors.email?.message}</Label>
                     <Input placeholder='Enter your Email' {...register("email")}/>
 
@@ -84,14 +86,11 @@ const Title = styled.div`
   font-size: 13px;
   margin-top: 20px;
   font-weight: bold;
-
-
   span {
     font-weight: bold;
     color: red;
     cursor: pointer;
   }
-
   @media screen and (max-width: 760px){
   }
   font-size: 13px;
@@ -129,8 +128,6 @@ text-decoration: none;
 color: white;
 transition: all 350ms;
   transform: scale(1);
-
-
   :hover {
     transform: scale(0.97);
     cursor: pointer;
@@ -148,7 +145,6 @@ text-decoration: none;
 color: white;
 transition: all 350ms;
   transform: scale(1);
-
   :hover {
     transform: scale(0.97);
     cursor: pointer;
@@ -173,7 +169,6 @@ margin-top: 20px;
   padding-left: 10px;
   margin-bottom: 10px;
   font-family: Poppins;
-
   ::placeholder {
     font-family: Poppins;
     color: gray;
@@ -192,7 +187,6 @@ margin-top: 20px;
 `
 
 const Form = styled.form`
-
 display: flex;
 justify-content: center;
 align-items:center;
@@ -214,13 +208,11 @@ const Text = styled.div`
 text-transform: capitalize;
 margin-top: 20px;
 font-weight: bold;
-
 @media screen and (max-width: 760px){
   text-transform: capitalize;
 margin-top: 60px;
 font-weight: bold;  
 }
-
 `
 
 const Card = styled.div`
@@ -231,7 +223,6 @@ display: flex;
 justify-content: center;
 align-items:center;
 flex-direction: column;
-
 @media screen and (max-width: 760px){
 box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 height: 500px;
@@ -240,9 +231,7 @@ display: flex;
 justify-content: center;
 align-items:center;
 flex-direction: column; 
-
 }
-
 `
 const Wrapper = styled.div`
 margin-top: 30px;
@@ -271,6 +260,8 @@ height: 100%;
 display: flex;
 align-items: center;
 font-family: Poppins;
+min-height: calc(100vh - 100px);
+
 @media screen and (max-width: 760px){
     margin-top: 70px;
 display: flex;

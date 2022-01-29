@@ -11,5 +11,5 @@ const Home = () => {
 export default Home;
 
 const Component = styled.div`
-margin-top: 70px;
+margin-top: 100px;
 `

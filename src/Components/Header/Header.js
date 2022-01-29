@@ -1,4 +1,3 @@
-import { color } from '@mui/system';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from "styled-components"
@@ -29,22 +28,14 @@ const Header = () => {
                 
           </ButtonHolder>
           </MainDiv>
-         {
-              toggle ? (
+         
                 <NavMenu>
                 <MenuOpenIcon onClick={toggle}/>
                     { isOpen ? <SideBar toggle = {toggle} setisOpen={setisOpen}/> : null}
                     
                    
                 </NavMenu>
-              ) : (
-                <NavMenu>
-                <HighlightOffIcon onClick={toggle}/>
-                    
-                   
-                </NavMenu>
-              )
-         }
+
             
           
                    
@@ -85,7 +76,9 @@ const ButtonHolder = styled.div``
 const Nav = styled.div``
 
 
-const Logo = styled.div``
+const Logo = styled.div`
+
+`
 
 const MainDiv = styled.div`
 width: 70%;
@@ -112,26 +105,28 @@ font-weight: bold;
 `
 
 const Wrapper = styled.div`
-height: 70px;
-width: 90%;
-display: flex;
-align-items: center;
-font-family: poppins;
-justify-content: space-between;
+ height: 100%;
+  display: flex;
+  margin: 0 20px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: 1200px) {
+    display: flex;
+    justify-content: space-between;
+  }
 `
 
 const Container = styled.div`
-background-color:#fff;
-height: 70px;
-width: 100vw;
-display: flex;
-justify-content: center;
-align-items: center;
-position: fixed;
-z-index: -1;
-top: 0;
-bottom: 0;
-right: 0;
-left: 0;
-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+width: 100%;
+  height: 70px;
+  background-color: ${({ bg }) => (bg ? "#004080" : "transparent")};
+  color: ${({ bg }) => (bg ? "white" : "#004080")};
+  position: fixed;
+  z-index: 1;
+  min-height: calc(100vh-100px);
+  top: 0;
+  bottom: 0;
+
 `
