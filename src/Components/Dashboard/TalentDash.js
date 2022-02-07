@@ -1,5 +1,6 @@
 import React ,{useState}from 'react';
 import styled from "styled-components"
+import pix from "../Image/avatar.png"
 
 
 
@@ -11,6 +12,12 @@ const TalentDash = () => {
             <NameHolder>Welcome Temi</NameHolder>
             <Text>Complete Your Bio</Text>
             <Another>Fill in  the form correctly</Another>
+            <ImageHolder>
+            <Image src={pix}/>
+           
+            <ImageButton htmlFor='pix'>Upload</ImageButton>
+            <ImgInput id="pix" type="file" />
+        </ImageHolder>
             <Form>
                 <Input placeholder='First Name'/>
                 <Input placeholder='Last Name'/>
@@ -109,9 +116,15 @@ const TalentDash = () => {
 </option>
                   <option value="Programming" >Programming</option>
                 </Selection>
-              </DropDown>      
+              </DropDown>     
+
+              <div>ID upload:</div> 
+              <InputF type="file" placeholder='Guardian/sponsors’ ID upload
+              '/>
+              <Label>Guardain information:</Label> 
               <Input placeholder='Guardian/sponsors’ name'/>
-              <Input placeholder='Guardian/sponsors’ ID upload
+              <div>Guardian/sponsors’ ID upload:</div> 
+              <InputF type="file" placeholder='Guardian/sponsors’ ID upload
               '/>
               <Input placeholder='Guardian/sponsors’ contact address'/>
               <Input placeholder='Guardian/sponsors’ phone number'/>
@@ -127,6 +140,45 @@ const TalentDash = () => {
 };
 
 export default TalentDash;
+
+const InputF = styled.input`
+
+`
+
+const ImageHolder = styled.div`
+height: 300px;
+width: 300px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction:column;
+`
+
+const Image = styled.img`
+height: 150px;
+width: 150px;
+border-radius: 100%;
+border: 2px solid black;
+`
+
+const ImageButton = styled.label`
+height: 40px;
+width: 100px;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: turquoise;
+border-radius: 8px;
+margin-top: 20px;
+`
+const ImgInput = styled.input`
+display: none;
+`
+const Label = styled.div`
+font-weight: bold;
+margin-top: 20px;
+
+`
 
 const Button = styled.button`
   padding: 15px 35px;
@@ -156,7 +208,8 @@ const Selection = styled.select`
        padding-left:10px;
        margin-left:10px;
        color: black;
-       font-weight: bold;
+       font-weight: lighter;
+       font-family: Poppins;
        border: 1px solid lightgray;
 
        
