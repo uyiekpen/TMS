@@ -63,7 +63,24 @@ const TalentDash = () => {
 </option>
                 <option value="Analysis" >Analysis</option>
               </Selection>
+            </DropDown>    
+            <DropDown>
+              <Status>Finance:</Status>
+              <Selection
+              value={led}
+              onChange={(e) => {
+                setLed(e.target.value)
+              }}
+              >
+                <option value="Self sponsorship" >Self sponsorship</option>
+                <option value="Sponsorship">Sponsorship</option>
+                <option value="Dependent on scholarship">Dependent on scholarship
+                </option>
+                
+                <option value="Tribinnov options">Tribinnov options</option>
+              </Selection>
             </DropDown>           
+                             
                       
               
               <DropDown>

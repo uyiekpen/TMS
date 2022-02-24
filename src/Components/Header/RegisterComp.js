@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
+import Header from './Header';
 
 
 
@@ -39,6 +40,7 @@ const RegisterComp = () => {
 
   return (
     <Component>
+            <Header/>
         <Wrapper>
             <Card>
                 <Text>Register Your Accout</Text>

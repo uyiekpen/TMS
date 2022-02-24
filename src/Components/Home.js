@@ -1,9 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import Header from "./Header/Header"
 
 
 const Home = () => {
   return <Component>
+          <div>
+              <Header/>
+          </div>
       this is the homepage
   </Component>;
 };
@@ -11,5 +15,5 @@ const Home = () => {
 export default Home;
 
 const Component = styled.div`
-margin-top: 100px;
+margin-top: 70px;
 `
