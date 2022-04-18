@@ -4,11 +4,15 @@ import SignIn from "./Components/Header/SignIn";
 import Home from "./Components/Home";
 import TalentDash from "./Components/Dashboard/TalentDash";
 import TalentHome from "./Components/Dashboard/TalentHome";
+import Header from "./Components/Header/Header";
 
  
 function App() {
   return (
    <BrowserRouter>
+        <div>
+        <Header/>
+        </div>
        <Routes>
        <Route path="/" element={<Home/>}/>
          <Route path="/Register" element={<RegisterComp/>}/>

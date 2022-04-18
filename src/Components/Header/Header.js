@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from "styled-components"
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import SideBar from './SideBar';
-import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import logo from "../Image/Logo.png"
 
 
 
@@ -17,12 +17,10 @@ const Header = () => {
   <Container>
       <Wrapper>
           <LogoHolder>
-              <Logo>.Tribinnov</Logo>
+              <Logo src={logo}/>
           </LogoHolder>
           <MainDiv>
-          <Nav>
-              <a>Home</a>
-          </Nav>
+    
           <ButtonHolder>
                 <Button1 ><Link to="/Register" style={{textDecoration:"none", color:"white"}}> Sign Up</Link></Button1>
                 
@@ -64,7 +62,7 @@ border-radius: 5px;
 outline: none;
 border: none;
 font-weight:bold;
-background: #123456;
+background-color: #0950CD;
 text-decoration: none;
 color: white;
 `
@@ -76,17 +74,18 @@ const ButtonHolder = styled.div``
 const Nav = styled.div``
 
 
-const Logo = styled.div`
-
+const Logo = styled.img`
+height: 50px;
+width:100px ;
+object-fit:contain ;
 `
 
 const MainDiv = styled.div`
-width: 70%;
 display: flex;
 justify-content: center;
 align-items: center;
 text-transform: capitalize;
-justify-content: space-between;
+justify-content: space-evenly;
 @media screen and (max-width: 760px){
     display:  none;
 }
@@ -95,7 +94,7 @@ justify-content: space-between;
 
 
 const LogoHolder = styled.div`
-height: 70px;
+height: 50px;
 width: 100px;
 display: flex;
 justify-content: center;
@@ -106,8 +105,8 @@ font-weight: bold;
 
 const Wrapper = styled.div`
  height: 100%;
+ width: 90%;
   display: flex;
-  margin: 0 20px;
   align-items: center;
   display: flex;
   justify-content: space-between;
@@ -123,10 +122,14 @@ width: 100%;
   height: 70px;
   background-color: ${({ bg }) => (bg ? "#004080" : "transparent")};
   color: ${({ bg }) => (bg ? "white" : "#004080")};
-  position: fixed;
+  position: absolute;
   z-index: 1;
   min-height: calc(100vh-100px);
   top: 0;
   bottom: 0;
+  display:flex ;
+  justify-content:center ;
+  align-items:center ;
+  border-bottom: 3px solid whitesmoke;
 
 `
